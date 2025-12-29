@@ -5,7 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+
+//  TODO: Have different font sizes for different monitors
+int font_size = 38;
+
+static char *font = "JetBrainsMono-Regular:pixelsize=38:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
