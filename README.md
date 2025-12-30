@@ -21,10 +21,10 @@ cd st
 sudo make install
 ```
 ### Requirements
-1. It uses [JetBrains Mono font](https://www.jetbrains.com/lp/mono). You may have to install that too
+1. I use [JetBrains Mono font](https://www.jetbrains.com/lp/mono). You may have to install that too
 
 > [!NOTE]
-> It may or may not work :p
+> Some features may or may not work :p
 
 > [!TIP]
 > Checkout [BreadOnPenguins's st](https://github.com/BreadOnPenguins/st) to get inspiration :)
