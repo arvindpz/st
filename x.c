@@ -1964,8 +1964,8 @@ kpress(XEvent *ev)
 		len = XLookupString(e, buf, sizeof buf, &ksym, NULL);
 	}
 
-  /* 0. highlight URLs when control held */
-  if (ksym == XK_Control_L) {
+	/* 0. highlight URLs when control held */
+	if (ksym == XK_Control_L) {
 		highlighturls();
 	} else if (ev->type == KeyRelease) {
 		unhighlighturls();
