@@ -1,3 +1,7 @@
+# simple terminal
+
+My fork of [st](https://st.suckless.org)
+
 # Patches used
 
 - [Blinking cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20230819-3a6d6d7.diff)
@@ -8,3 +12,14 @@
 - [Alpha](https://st.suckless.org/patches/alpha/st-alpha-20240814-a0274bc.diff)
 - [Change Alpha](https://st.suckless.org/patches/changealpha/st-changealpha-20251027-0.9.3.diff)
 - [Click URL](https://st.suckless.org/patches/clickurl/st-clickurl-0.8.5.diff)
+
+# Installation
+
+```
+git clone https://github.com/arvindpz/st.git
+cd st
+sudo make install
+```
+
+# Disclaimer
+It may or may not work :p
