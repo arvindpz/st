@@ -670,16 +670,17 @@ highlighturls(void)
 	char *linestr = calloc(sizeof(char), term.col+1); /* assume ascii */
 	for (int i = term.top; i < term.bot; i++) {
 		int url_start = -1;
+    Line line = TLINE(i);
 		for (int j = 0; j < term.col; j++) {
-			if (term.line[i][j].u < 127) {
-				linestr[j] = term.line[i][j].u;
+			if (line[j].u < 127) {
+				linestr[j] = line[j].u;
 			}
 			linestr[term.col] = '\0';
 		}
 		while ((match = strstrany(linestr + url_start + 1, urlprefixes))) {
 			url_start = match - linestr;
 			for (int c = url_start; c < term.col && strchr(urlchars, linestr[c]); c++) {
-				term.line[i][c].mode |= ATTR_URL;
+				line[c].mode |= ATTR_URL;
 				tsetdirt(i, c);
 			}
 		}
@@ -691,8 +692,9 @@ void
 unhighlighturls(void)
 {
 	for (int i = term.top; i < term.bot; i++) {
+    Line line = TLINE(i);
 		for (int j = 0; j < term.col; j++) {
-			Glyph* g = &term.line[i][j];
+			Glyph* g = &line[j];
 			if (g->mode & ATTR_URL) {
 				g->mode &= ~ATTR_URL;
 				tsetdirt(i, j);
@@ -706,9 +708,10 @@ void
 followurl(int x, int y) {
 	char *linestr = calloc(sizeof(char), term.col+1); /* assume ascii */
 	char *match;
+  Line line = TLINE(x);
 	for (int i = 0; i < term.col; i++) {
-		if (term.line[x][i].u < 127) {
-			linestr[i] = term.line[x][i].u;
+		if (line[i].u < 127) {
+			linestr[i] = line[i].u;
 		}
 		linestr[term.col] = '\0';
 	}
