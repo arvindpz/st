@@ -97,6 +97,12 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.8;
+
+/* Background opacity */
+float alpha_def;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -214,6 +220,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.f = -0.75} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.f = -0.75} },
+	{ MODKEY,               XK_m, chgalpha,       {.f = -1} }, /* Decrease opacity */
+	{ MODKEY|ShiftMask,     XK_braceright,  chgalpha,       {.f = +1} }, /* Increase opacity */
+	{ MODKEY,               XK_bracketright,chgalpha,       {.f =  0} }, /* Reset opacity */
 };
 
 /*
