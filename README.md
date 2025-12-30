@@ -6,3 +6,4 @@
 - [Ligatures with scrollback ring-buffer](https://st.suckless.org/patches/ligatures/0.9.3/st-ligatures-scrollback-ringbuffer-20251007-0.9.3.diff)
 - [Alpha](https://st.suckless.org/patches/alpha/st-alpha-20240814-a0274bc.diff)
 - [Change Alpha](https://st.suckless.org/patches/changealpha/st-changealpha-20251027-0.9.3.diff)
+- [Click URL](https://st.suckless.org/patches/clickurl/st-clickurl-0.8.5.diff)
