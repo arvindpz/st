@@ -681,6 +681,7 @@ highlighturls(void)
 			url_start = match - linestr;
 			for (int c = url_start; c < term.col && strchr(urlchars, linestr[c]); c++) {
 				line[c].mode |= ATTR_URL;
+			  line[c].fg = defaulturlfg;
 				tsetdirt(i, c);
 			}
 		}
@@ -697,6 +698,7 @@ unhighlighturls(void)
 			Glyph* g = &line[j];
 			if (g->mode & ATTR_URL) {
 				g->mode &= ~ATTR_URL;
+        g->fg = defaultfg;
 				tsetdirt(i, j);
 			}
 		}
@@ -2074,7 +2076,8 @@ strhandle(void)
 	const struct { int idx; char *str; } osc_table[] = {
 		{ defaultfg, "foreground" },
 		{ defaultbg, "background" },
-		{ defaultcs, "cursor" }
+		{ defaultcs, "cursor" },
+		{ defaulturlfg, "defaulturlfg" },
 	};
 
 	term.esc &= ~(ESC_STR_END|ESC_STR);

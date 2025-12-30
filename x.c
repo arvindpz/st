@@ -197,7 +197,7 @@ static void usage(void);
 
 static void (*handler[LASTEvent])(XEvent *) = {
 	[KeyPress] = kpress,
-	[KeyRelease] = kpress,
+  [KeyRelease] = kpress,
 	[ClientMessage] = cmessage,
 	[ConfigureNotify] = resize,
 	[VisibilityNotify] = visibility,
@@ -1963,9 +1963,9 @@ kpress(XEvent *ev)
 	}
 
   /* 0. highlight URLs when control held */
-	if (ksym == XK_Control_L) {
+  if (ksym == XK_Control_L) {
 		highlighturls();
-	} else if (ev->type == KeyRelease && e->keycode == XKeysymToKeycode(e->display, XK_Control_L)) {
+	} else if (ev->type == KeyRelease) {
 		unhighlighturls();
 	}
 
