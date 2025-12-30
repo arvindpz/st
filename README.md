@@ -20,6 +20,12 @@ git clone https://github.com/arvindpz/st.git
 cd st
 sudo make install
 ```
+### Requirements
+1. It uses [JetBrains Mono font](https://www.jetbrains.com/lp/mono). You may have to install that too
 
-# Disclaimer
-It may or may not work :p
+> [!NOTE]
+> It may or may not work :p
+
+> [!TIP]
+> Checkout [BreadOnPenguins's st](https://github.com/BreadOnPenguins/st) to get inspiration :)
+
