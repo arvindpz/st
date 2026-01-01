@@ -7,9 +7,10 @@
  */
 
 //  TODO: Have different font sizes for different monitors
-int font_size = 38;
+// For laptop, size=10 seems to be perfect
+// For monitor, size=15 seems to be right
 
-static char *font = "JetBrainsMono-Regular:pixelsize=38:antialias=true:autohint=true";
+static char *font = "JetBrainsMono-Regular:size=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
